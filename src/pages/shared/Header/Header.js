@@ -14,7 +14,16 @@ import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import { FaBeer, FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user , userLogout} = useContext(AuthContext);
+
+  const handleLogout = ()=>{
+    userLogout()
+    .then(() => {
+        // Sign-out successful.
+      }).catch((error) => {
+        // An error happened.
+      });
+  }
 //   console.log(user);
   return (
     <div>
@@ -92,6 +101,7 @@ const Header = () => {
                       </Button>
                     )}
                   </OverlayTrigger>
+                  <Button onClick={handleLogout} className=" my-3 mx-2" variant="dark">Logout</Button>
                 </>
               ) : (
                 <>
