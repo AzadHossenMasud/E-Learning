@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { FaBeer, FaGoogle, FaGithub } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
 const Login = () => {
@@ -13,6 +13,9 @@ const Login = () => {
     // console.log(userLoginWithGoogle);
     const providerGoogle = new GoogleAuthProvider();
     const providerGitHub = new GithubAuthProvider();
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
 
     const handleGoogle =()=>{
@@ -33,12 +36,13 @@ const Login = () => {
         .then((result) => {
             const user = result.user;
             // console.log(user)
-            navigate('/')
+           
             // ...
           }).catch((error) => {
             // Handle Errors here.
             console.log(error);
           });
+          
     }
 
 
@@ -57,9 +61,10 @@ const Login = () => {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
-        navigate('/')
         setErr('')
         form.reset()
+       navigate(from, {replace: true});
+
         // ...
       })
       .catch((error) => {

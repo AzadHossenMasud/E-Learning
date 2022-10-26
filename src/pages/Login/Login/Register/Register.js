@@ -1,7 +1,7 @@
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
 import { Container } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../../context/AuthProvider/AuthProvider";
 import { FaBeer, FaGoogle, FaGithub } from "react-icons/fa";
 
@@ -12,6 +12,7 @@ const Register = () => {
   // console.log(userLoginWithGoogle);
   const providerGoogle = new GoogleAuthProvider();
   const providerGitHub = new GithubAuthProvider();
+
 
   const handleGoogle = () => {
     userLoginWithGoogle(providerGoogle)

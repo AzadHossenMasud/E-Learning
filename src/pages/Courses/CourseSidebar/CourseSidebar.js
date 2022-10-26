@@ -22,7 +22,7 @@ const CourseSidebar = ({ catagories }) => {
                   {catagories.map((catagory) => (
                     <p>
                       <Link
-                        to={`/course/${catagory.id}`}
+                        to={`/catagory/${catagory.id}`}
                         className="mb-3 text-white"
                       >
                         {catagory.name}
