@@ -9,12 +9,13 @@ import {
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import { FaBeer, FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
   const { user , userLogout} = useContext(AuthContext);
+  const location = useLocation()
 
   const handleLogout = ()=>{
     userLogout()
@@ -109,7 +110,7 @@ const Header = () => {
                     <Nav.Link>
                       <Link
                         className="text-dark text-decoration-none"
-                        to="/signin"
+                        to="/signin" state={{from: location}} replace
                       >
                         Sign In
                       </Link>
