@@ -16,7 +16,7 @@ const CourseItems = ({ course }) => {
             <p>Pubished by: {author.name}</p>
             <p>Last Updated: {author.published_date}</p>
           </Card.Text>
-          <Button variant="secondary"><Link to={`/course/${_id}`}>View Course</Link></Button>
+          <Button variant="primary"><Link className="text-white text-decoration-none" to={`/course/${_id}`}>View Course</Link></Button>
         </Card.Body>
       </Card>
     </div>
