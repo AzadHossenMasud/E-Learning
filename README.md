@@ -9,6 +9,8 @@ https://the-learning-home.web.app/
 * Load Dynamic Data
 * User Friendly
 * smoth route system
+* Responsive
+
 
 ## Used Library and Framwork
 * Bootstrap
