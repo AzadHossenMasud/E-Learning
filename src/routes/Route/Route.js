@@ -1,4 +1,5 @@
 import Main from "../../layout/Main/Main";
+import Blog from "../../pages/Blog/Blog";
 import CourseDetails from "../../pages/Courses/CourseDetails/CourseDetails";
 import CourseItems from "../../pages/Courses/CourseItems/CourseItems";
 import Courses from "../../pages/Courses/Courses/Courses";
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>,
+      },
+      {
+        path: "blog",
+        element: <Blog></Blog>,
       },
       {
         path: "courses",

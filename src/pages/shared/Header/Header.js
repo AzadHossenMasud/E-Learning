@@ -54,10 +54,6 @@ const Header = () => {
                 </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link className="text-dark text-decoration-none" to="/tutorial">
-                  {" "}
-                  Tutorial
-                </Link>
               </Nav.Link>
               <Nav.Link>
                 <Link className="text-dark text-decoration-none" to="/blog">
