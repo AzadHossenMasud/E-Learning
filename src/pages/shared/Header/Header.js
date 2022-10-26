@@ -116,16 +116,7 @@ const Header = () => {
                     </Nav.Link>
                   </Button>
 
-                  <Button variant="link">
-                    <Nav.Link>
-                      <Link
-                        className="text-dark text-decoration-none"
-                        to="/signup"
-                      >
-                        Sign Up
-                      </Link>
-                    </Nav.Link>
-                  </Button>
+        
                 </>
               )}
             </Nav>

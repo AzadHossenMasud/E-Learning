@@ -2,7 +2,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { FaBeer, FaGoogle, FaGithub } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
 const Login = () => {
@@ -78,6 +78,15 @@ const Login = () => {
             <button type="submit" className="btn btn-primary">
               Submit
             </button>
+          </div>
+
+          <div>
+            <p className="mt-3">Don't have an Account??  <Link
+                        className=""
+                        to="/register"
+                      >
+                        Sign Up
+                      </Link> Here</p>
           </div>
         </form>
       </Container>
