@@ -4,6 +4,18 @@ The Learning Home
 # Project Link
 https://the-learning-home.web.app/
 
+## Feature
+* Authentication System
+* Load Dynamic Data
+* User Friendly
+* smoth route system
+
+## Used Library and Framwork
+* Bootstrap
+* React Bootstrap
+* React Icon
+* 
+
 
 # Getting Started with Create React App
 
