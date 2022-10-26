@@ -1,12 +1,14 @@
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
+import { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { FaBeer, FaGoogle, FaGithub } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 
 const Login = () => {
-    const {userLoginWithGoogle, userLoginWithGithub} = useContext(AuthContext)
+    const [err, setErr] = useState('')
+    const {userLoginWithGoogle, userLoginWithGithub, userLogin} = useContext(AuthContext)
     const navigate= useNavigate()
     // console.log(userLoginWithGoogle);
     const providerGoogle = new GoogleAuthProvider();
@@ -45,7 +47,28 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target
-    console.log(form);
+    // console.log(form);
+
+    const email = form.email.value;
+    const password = form.password.value;
+
+    userLogin(email, password)
+    .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user);
+        navigate('/')
+        setErr('')
+        form.reset()
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // console.log(errorMessage)
+        setErr(errorMessage)
+      });
+    
   };
 
   
@@ -73,6 +96,12 @@ const Login = () => {
               name="password"
             />
           </div>
+
+          <p className=" text-danger">
+            {
+                err
+            }
+          </p>
          
           <div className="d-grid">
             <button type="submit" className="btn btn-primary">
