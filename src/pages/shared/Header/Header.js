@@ -12,9 +12,13 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider/AuthProvider";
 import { FaBeer, FaUserAlt } from "react-icons/fa";
+import ReactSwitch from "react-switch";
+import { ThemeContext } from "../../../App";
+
 
 const Header = () => {
   const { user , userLogout} = useContext(AuthContext);
+  const {theme, toggleTheme} = useContext(ThemeContext)
   const location = useLocation()
 
   const handleLogout = ()=>{
@@ -99,6 +103,12 @@ const Header = () => {
                     )}
                   </OverlayTrigger>
                   <Button onClick={handleLogout} className=" my-3 mx-2" variant="dark">Logout</Button>
+                  
+                  <Nav.Link>
+                    <Link><label >{theme === 'light'? 'Light Mood' : 'Dark Mood'}</label>
+                  <ReactSwitch onChange={toggleTheme} checked ={theme === 'dark'} /></Link>
+                  </Nav.Link>
+
                 </>
               ) : (
                 <>
@@ -112,7 +122,10 @@ const Header = () => {
                       </Link>
                     </Nav.Link>
                   </Button>
-
+                  <Nav.Link>
+                    <Link><label >{theme === 'light'? 'Light Mood' : 'Dark Mood'}</label>
+                  <ReactSwitch onChange={toggleTheme} checked ={theme === 'dark'} /></Link>
+                  </Nav.Link>
         
                 </>
               )}
