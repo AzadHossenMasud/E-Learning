@@ -23,7 +23,8 @@ const Login = () => {
         .then((result) => {
             const user = result.user;
             // console.log(user)
-            navigate('/')
+            navigate(from, {replace: true});
+
             // ...
           }).catch((error) => {
             // Handle Errors here.
@@ -36,7 +37,8 @@ const Login = () => {
         .then((result) => {
             const user = result.user;
             // console.log(user)
-           
+            navigate(from, {replace: true});
+
             // ...
           }).catch((error) => {
             // Handle Errors here.
@@ -63,7 +65,8 @@ const Login = () => {
         console.log(user);
         setErr('')
         form.reset()
-       navigate(from, {replace: true});
+        navigate(from, {replace: true});
+
 
         // ...
       })

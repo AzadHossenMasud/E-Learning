@@ -48,9 +48,8 @@ const CourseDetails = () => {
       </Container>
 
       <div>
-        {
-            !user &&<Link to="/signin" state={{from: location}} replace> <Button variant="success">Get Premium Access</Button></Link>
-        }
+          <Link to="/checkout" state={{from: location}} replace> <Button variant="success">Get Premium Access</Button></Link>
+
       
 
       </div>

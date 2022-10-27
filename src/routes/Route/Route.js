@@ -1,5 +1,6 @@
 import Main from "../../layout/Main/Main";
 import Blog from "../../pages/Blog/Blog";
+import CheckOut from "../../pages/CheckOut/CheckOut";
 import CourseDetails from "../../pages/Courses/CourseDetails/CourseDetails";
 import CourseItems from "../../pages/Courses/CourseItems/CourseItems";
 import Courses from "../../pages/Courses/Courses/Courses";
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "checkout",
+        element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
       },
       {
         path: "courses",
