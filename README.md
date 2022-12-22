@@ -2,8 +2,7 @@
 The Learning Home
 
 # Project Link
-https://the-learning-home.web.app/
-
+https://the-learning-home.firebaseapp.com/
 ## Feature
 * Authentication System
 * Load Dynamic Data
