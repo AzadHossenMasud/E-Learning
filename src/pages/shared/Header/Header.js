@@ -122,10 +122,7 @@ const Header = () => {
                       </Link>
                     </Nav.Link>
                   </Button>
-                  <Nav.Link>
-                    <Link><label >{theme === 'light'? 'Light Mood' : 'Dark Mood'}</label>
-                  <ReactSwitch onChange={toggleTheme} checked ={theme === 'dark'} /></Link>
-                  </Nav.Link>
+                  
         
                 </>
               )}

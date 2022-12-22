@@ -19,7 +19,6 @@ const Home = () => {
       <h2 style={{ fontSize: "50px"}}>Learn To Code</h2>
       <p>With the world's largest web developer site</p>
       <Button variant="secondary"><Link className=" text-white text-decoration-none fs-3" to='/courses'>Courses</Link></Button>{' '}
-      <Button variant="secondary"><Link className=" text-white text-decoration-none fs-3" to='/tutorial'>Tutorial</Link></Button>{' '}
       </div>
     </div>
   );
